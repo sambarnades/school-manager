@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "school-manager-backend": {
+      "main": "src/school-manager-backend/main.mo",
+      "type": "motoko"
+    },
+    "school-manager-frontend": {
+      "dependencies": [
+        "school-manager-backend"
+      ],
+      "source": [
+        "src/school-manager-frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "school-manager-frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
