@@ -9,25 +9,29 @@ actor Database {
     var students : Buffer.Buffer<Types.Student> = Buffer.Buffer<Types.Student>(0);
 
     public func addRelative(
-        id : Int,
-        fName : Text,
-        lName : Text,
-        mail : Text,
-        email : Text,
-        phone : Int,
-        job : Text,
+        entryId : Int,
+        entryFName : Text,
+        entryLName : Text,
+        entryMail : Text,
+        entryEmail : Text,
+        entryPhone : Int,
+        entryJob : Text,
     ) {
         let entry : Types.Relative = {
-            id : id;
-            fName : fName;
-            lName : lName;
-            mail : mail;
-            email : email;
-            phone : phone;
-            job : job;
+            id = entryId;
+            fName = entryFName;
+            lName = entryLName;
+            mail = entryMail;
+            email = entryEmail;
+            phone = entryPhone;
+            job = entryJob;
         };
 
         relatives.add(entry);
+    };
+
+    type DatabaseInterface = actor {
+        addRelative : (Int, Text, Text, Text, Text, Int, Text) -> async ();
     };
 
 };

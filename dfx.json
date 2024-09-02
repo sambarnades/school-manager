@@ -1,16 +1,16 @@
 {
   "canisters": {
+    "database": {
+      "main": "src/database/Database.mo",
+      "type": "motoko"
+    },
     "school-manager-backend": {
       "main": "src/school-manager-backend/main.mo",
       "type": "motoko"
     },
     "school-manager-frontend": {
-      "dependencies": [
-        "school-manager-backend"
-      ],
-      "source": [
-        "src/school-manager-frontend/dist"
-      ],
+      "dependencies": ["school-manager-backend","database"],
+      "source": ["src/school-manager-frontend/dist"],
       "type": "assets",
       "workspace": "school-manager-frontend"
     }
